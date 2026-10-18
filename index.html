@@ -95,7 +95,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .brand-q { width: 22px; height: 22px; border-radius: 6px; background: var(--accent); color: #fff; display: grid; place-items: center; font-size: 12px; font-weight: 700; }
   .menus { display: flex; gap: 2px; margin-left: 10px; align-items: center; }
   .menus button { padding: 6px 10px; border-radius: 8px; color: var(--text-2); font-size: 13px; }
-  .menus button.iconish { width: 32px; height: 32px; padding: 0; display: grid; place-items: center; font-size: 15px; color: var(--text-3); }
   .menus button:hover { background: var(--accent-bg); color: var(--accent); }
   .menus button.active { color: var(--accent); font-weight: 600; }
   .nav-more { display: none; position: absolute; top: 44px; left: 150px; z-index: 20; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); padding: 6px; min-width: 150px; }
@@ -119,8 +118,8 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .lnav.nanim::before, .lnav.nanim #lnavBtn, .stage.lmv .flip, .stage.lmv .emo { transition: transform .22s cubic-bezier(.2,.7,.3,1); }
   .app.lmini #lnavBtn { transform: translate3d(var(--cx, 0px),0,0); }
   .emo { will-change: transform; }
-  .lnav .lbl, .lnav .lgrp, .lnav .bdg, .lnav .slot .s1, .lnav .slot .s2, .lnav .slot .s3, .lnav .slot .sbtn .t { transition: opacity .1s ease; }
-  .app.lfade .lnav .lbl, .app.lfade .lnav .lgrp, .app.lfade .lnav .bdg:not(.solid), .app.lfade .lnav .slot .s1, .app.lfade .lnav .slot .s2, .app.lfade .lnav .slot .s3, .app.lfade .lnav .slot .sbtn .t { opacity: 0; }
+  .lnav .lbl, .lnav .lgrp, .lnav .bdg, .lnav .slot .s1, .lnav .slot .s2 { transition: opacity .1s ease; }
+  .app.lfade .lnav .lbl, .app.lfade .lnav .lgrp, .app.lfade .lnav .bdg:not(.solid), .app.lfade .lnav .slot .s1, .app.lfade .lnav .slot .s2 { opacity: 0; }
 
   /* Left sidebar */
   .lnav { grid-column: 1; display: flex; flex-direction: column; min-height: 0; position: relative; z-index: 6; contain: layout style; }
@@ -134,24 +133,17 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .bdg { font-size: 10.5px; line-height: 17px; padding: 0 6px; border-radius: 9px; color: var(--accent); background: var(--accent-bg); font-weight: 600; }
   .bdg.solid { color: #fff; background: var(--accent); }
   .lgrp { margin: 12px 10px 4px; font-size: 11px; color: var(--text-3); letter-spacing: .1em; white-space: nowrap; }
-  .lnav-top { display: flex; justify-content: flex-end; padding: 0 2px 4px; }
   .slot { margin: 8px; padding: 10px 11px; border-radius: 12px; background: var(--panel-2); border: 1px solid var(--line); font-size: 12px; }
   .slot .s1 { display: flex; align-items: center; gap: 6px; color: var(--text-3); font-size: 11px; }
   .slot .s1 b { color: var(--accent); font-weight: 650; }
   .slot .s2 { font-weight: 650; font-size: 13px; margin: 4px 0 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .slot .s3 { color: var(--text-3); font-size: 11.5px; }
-  .slot .sbtn { display: flex; gap: 6px; margin-top: 8px; }
-  .slot .sbtn button { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 5px; height: 28px; border-radius: 8px; border: 1px solid var(--line); font-size: 12px; color: var(--text-2); background: var(--panel); }
-  .slot .sbtn button:hover { color: var(--accent); background: var(--accent-bg); }
   .app.lmini .ln { justify-content: flex-start; padding: 0 10px; }   /* 图标 x 位置在收起 / 展开时不变，过渡中不跳 */
-  .app.lmini .ln .lbl, .app.lmini .ln .bdg:not(.solid), .app.lmini .slot .s1, .app.lmini .slot .s2, .app.lmini .slot .s3, .app.lmini .slot .sbtn .t, .app.lmini .slot .sbtn button + button { display: none; }
+  .app.lmini .ln .lbl, .app.lmini .ln .bdg:not(.solid), .app.lmini .slot .s1, .app.lmini .slot .s2 { display: none; }
   .app.lmini .ln .bdg.solid { position: absolute; top: 6px; right: 7px; width: 7px; height: 7px; padding: 0; font-size: 0; }
   .app.lmini .ln[data-n]::after { content: ""; position: absolute; top: 7px; right: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-soft); }
   .app.lmini .lgrp { font-size: 0; height: 1px; margin: 8px 8px; background: var(--line); }
 
   .app.lmini .slot { margin: 6px; padding: 6px 0; background: none; border: 0; }
-  .app.lmini .slot .sbtn { margin: 0; justify-content: center; }
-  .app.lmini .slot .sbtn button { flex: 0 0 32px; height: 32px; }
   .app.lmini #lnavBtn .ic { transform: scaleX(-1); }
 
   /* Stage */
@@ -182,7 +174,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
 .stage.ptmv-c .portrait.ready.anim { transition: transform .2s cubic-bezier(0.2,0,0,1), opacity .2s ease; }
 @media (prefers-reduced-motion: reduce) { .stage.ptmv-o .portrait.ready.anim, .stage.ptmv-c .portrait.ready.anim { transition: none; } }   /* 22:18 Pip：减弱动画时直接切到位 */
 .app .portrait-wrap.t43y { transition: none !important; }
-  .portrait.is-hidden { opacity: 0; }
   /* 动态立绘（示意）：轻微呼吸，只动 transform；静态时无动画 */
   .pb { position: absolute; inset: 0; transform-origin: 50% 100%; }
   .portrait.breath .pb { will-change: transform; animation: q2-breathe 4.8s ease-in-out infinite; }
@@ -264,7 +255,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .me-q b { color: var(--text-2); font-weight: 600; margin-right: 6px; }
   /* 滚动条：统一一套写在 2d-app.css 末尾「全站细滚动条」，这里不再单独写 */
   .turn + .turn { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); }
-  .d-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
   .d-name { color: var(--accent); font-weight: 700; font-size: 14px; }
   .turn.me .d-name { color: var(--text-2); }
   .d-meta { color: var(--text-3); font-size: 12px; }
@@ -306,7 +296,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .send { height: 42px; min-width: 64px; padding: 0 16px; border-radius: 12px; background: var(--accent); color: #fff; font-weight: 600; }
   .send:hover { opacity: .92; }
   .send.stop { background: var(--panel-2); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line)); }
-  .d-foot { margin-top: 8px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
   .model-tag { cursor: pointer; display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px; border-radius: 999px; font-size: 11px; color: var(--text-2); background: var(--panel-2); border: 1px solid var(--line); white-space: nowrap; }
   .hint { color: var(--text-3); font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .drop-hint { position: absolute; inset: 8px; z-index: 6; display: none; place-items: center; border: 2px dashed var(--accent-soft); border-radius: 18px; background: color-mix(in srgb, var(--panel) 92%, transparent); color: var(--accent); font-size: 13px; font-weight: 600; }
@@ -318,7 +307,7 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   /* A 在较窄窗口（< 1280px，卡宽 ≈ 520）：压缩操作行与输入行，让卡片更矮 */
   @media (max-width: 1279px) {
     .lay-a .dialogue:not(.tall) { padding: 10px 12px 8px; }
-    .lay-a .dialogue .d-head, .lay-a .dialogue .c-head { margin-bottom: 3px; }
+    .lay-a .dialogue .c-head { margin-bottom: 3px; }
     .lay-a .dialogue .d-body { line-height: 1.6; }
     .lay-a .dialogue .d-body .inner { margin-top: 6px; padding: 6px 9px; }
     .lay-a .dialogue .remind { margin-top: 7px; padding: 3px 4px 3px 8px; font-size: 12px; }
@@ -329,7 +318,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
     .lay-a .dialogue .d-input { margin-top: 6px; padding-top: 6px; gap: 6px; }
     .lay-a .dialogue .d-input textarea { height: 34px; padding: 7px 10px; border-radius: 10px; }
     .lay-a .dialogue .send { height: 36px; min-width: 56px; padding: 0 12px; border-radius: 10px; }
-    .lay-a .dialogue .d-foot { margin-top: 5px; }
     .lay-a .dialogue .model-tag { padding: 1px 7px; }
   }
   /* A 的窄舞台回退（舞台 < 720px）：卡片回到居中 */
@@ -458,11 +446,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .detail[hidden] { display: none; }
   .detail { animation: fadeIn .2s ease; }
   .detail .rel-row { color: var(--text-2); }
-  .ghost { flex: 1; padding: 9px 10px; border-radius: 11px; border: 1px solid var(--line); color: var(--text-2); font-size: 13px; }
-  .ghost:hover { background: var(--accent-bg); color: var(--accent); }
-  .primary { flex: 1; padding: 9px 10px; border-radius: 11px; background: var(--accent); color: #fff; font-size: 13px; font-weight: 600; }
-  .primary.open { background: var(--accent-bg); color: var(--accent); }
-
   .toast { position: fixed; left: 50%; bottom: 24px; z-index: 50; padding: 8px 14px; border-radius: 10px; font-size: 12.5px; background: var(--text); color: var(--panel); opacity: 0; transform: translate3d(-50%, 8px, 0); transition: opacity .2s ease, transform .2s ease; pointer-events: none; }
   .toast.show { opacity: 1; transform: translate3d(-50%, 0, 0); }
 
@@ -501,18 +484,16 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .nav-more .mat-row .seg button.on { background: var(--panel); color: var(--accent); font-weight: 600; box-shadow: 0 0 0 1px var(--line); }
   html.lowfx .nav-more .mat-row .seg { opacity: .55; }
   /* ===== 按钮三级（全站复用）：主按钮每页至多一个实色玫瑰；次级 = 描边 / 浅底；低频 / 危险 = 纯文字 + 图标 ===== */
-  .btn-primary, .btn-secondary, .btn-soft, .btn-text { display: inline-flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap; font: inherit; }
+  .btn-primary, .btn-secondary, .btn-text { display: inline-flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap; font: inherit; }
   .btn-primary { height: 36px; padding: 0 16px; border-radius: 11px; background: var(--accent); color: #fff; font-size: 13.5px; font-weight: 600; }
   .btn-primary:hover { opacity: .92; }
   .btn-primary[disabled] { opacity: .6; cursor: default; }
   .btn-secondary { height: 32px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--line-2); color: var(--text-2); font-size: 13px; background: transparent; }
   .btn-secondary:hover { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, var(--line-2)); background: var(--accent-bg); }
-  .btn-soft { height: 26px; padding: 0 10px; border-radius: 999px; background: var(--panel-2); color: var(--text-2); font-size: 12px; }
-  .btn-soft:hover { background: var(--accent-bg); color: var(--accent); }
   .btn-text { height: 26px; padding: 0 6px; border-radius: 7px; color: var(--text-3); font-size: 12px; background: none; }
   .btn-text:hover { color: var(--accent); }
   .btn-text.danger:hover { color: #b3413a; }
-  .btn-primary .ic, .btn-secondary .ic, .btn-soft .ic, .btn-text .ic { width: 14px; height: 14px; }
+  .btn-primary .ic, .btn-secondary .ic, .btn-text .ic { width: 14px; height: 14px; }
   /* 舞台对话区按这三级收敛：快捷 = 浅底小胶囊；展开历史 / 图片 = 文字按钮；发送 = 舞台上唯一的实色按钮 */
   .quick .qp { border-color: transparent; }
   .quick .qp.txt { background: none; color: var(--text-3); padding: 0 6px; }
@@ -818,8 +799,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .nb-empty { padding: 16px 10px; font-size: var(--fs-desc); color: var(--text-3); text-align: center; }
 
   /* ===== 对话卡右下：引用记忆（待定），极淡，不挤模型标签 ===== */
-  .d-foot .hint { flex: 1 1 auto; min-width: 0; text-align: right; }
-  .d-foot .model-tag { flex: none; }
   .mem-ref { flex: none; display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: var(--text-3); opacity: .8; white-space: nowrap; cursor: help; }
   .mem-ref .tbd { font-style: normal; font-size: 10px; line-height: 14px; padding: 0 4px; border-radius: 4px; border: 1px solid var(--line-2); color: var(--text-3); }
 
@@ -860,7 +839,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .utabs button.on { color: var(--accent); font-weight: 600; }
   .utabs button.on::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--accent); border-radius: 2px; }
   .utabs button .n { margin-left: 4px; font-size: 11px; color: var(--text-3); font-weight: 400; }
-  .pg-body.tabbed { padding-top: 0; }
   @media (max-width: 1100px) { :root { --sub-w: 140px; } .shell { column-gap: 20px; } }
 
   /* 常用块 */
@@ -928,7 +906,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   /* ===== 表单模板：单列居中 ≤720；短字段两列；长文本整行；底部吸附操作条 56px ===== */
   .form { display: flex; flex-direction: column; gap: var(--sec-gap); max-width: 720px; }
   .fgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .fgrid.three { grid-template-columns: 1fr 1fr 1fr; }
   .fld { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
   .fld.full { grid-column: 1 / -1; }
   .fld > label { font-size: var(--fs-label); color: var(--text-2); font-weight: 500; }
@@ -938,7 +915,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .fld textarea { resize: vertical; min-height: 84px; line-height: 1.65; }
   .fld input:focus, .fld select:focus, .fld textarea:focus { border-color: var(--accent); }
   .fld.dirty > label::after { content: " · 已修改"; color: var(--accent); font-weight: 400; font-size: 11px; }
-  .fcard { background: var(--panel); border: 1px solid var(--line); border-radius: var(--card-r); padding: var(--card-pad); display: flex; flex-direction: column; gap: 16px; }
   .formbar { position: sticky; bottom: 0; z-index: 3; display: flex; align-items: center; gap: 12px; height: 56px; margin-top: var(--sec-gap); background: var(--bg); border-top: 1px solid var(--line); }
   .formbar .dirty-msg { display: none; align-items: center; gap: 6px; font-size: var(--fs-desc); color: var(--text-2); }
   .formbar .dirty-msg::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
@@ -1031,11 +1007,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .nx .ic { width: 12px; height: 12px; }
   .sig-line { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; font-size: 12px; color: var(--text-3); }
   .sig-line span { flex: 1; } .sig-line span::before { content: "· "; color: var(--accent); }
-  .qq-ban { border: 1px solid var(--line-2); border-radius: 10px; padding: 4px 6px 4px 10px; font-size: 12.5px; }
-  .qq-h { display: flex; align-items: center; gap: 8px; } .qq-h > .ic { width: 14px; height: 14px; color: var(--accent); }
-  .qq-h .desc { margin-left: 6px; }
-  .qq-l { margin: 4px 0 4px 22px; padding: 0; list-style: none; font-size: 12px; color: var(--text-2); line-height: 1.8; } .qq-l b { font-weight: 500; color: var(--text-3); margin-right: 6px; }
-  .remind .more-due { height: 20px; font-size: 11.5px; margin-left: 6px; color: var(--accent); }
   .search-panel { position: absolute; top: 52px; right: 12px; bottom: 12px; z-index: 6; width: 340px; display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line-2); border-radius: var(--card-r); box-shadow: var(--shadow); }
   .search-panel[hidden] { display: none; }
   .sp-h { display: flex; align-items: center; gap: 8px; padding: 0 8px 0 16px; }
@@ -1113,7 +1084,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
 
   /* ===== 精简模式 / 桌宠 / 新开一局 ===== */
   .lt-av { width: 28px; height: 28px; border-radius: 50%; background: var(--accent-bg) center 18% / cover no-repeat; flex: none; display: inline-block; }
-  .lt-win { padding: 0; overflow: hidden; }
   .lt-bar { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
   .lt-bar b { font-size: var(--fs-label); }
   .lt-body { display: grid; grid-template-columns: minmax(0, 1fr) 260px; min-height: 380px; }
@@ -1131,18 +1101,12 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .lt-pomo { text-align: center; padding: 10px 0 6px; }
   .lt-clock { display: block; font-size: 34px; font-weight: 600; letter-spacing: 1px; font-variant-numeric: tabular-nums; margin: 4px 0; }
   .lt-pomo .lt-row { justify-content: center; }
-  .lt-sub { font-size: var(--fs-desc); font-weight: 650; margin-top: 8px; }
   .lt-td { display: flex; align-items: center; gap: 8px; font-size: var(--fs-desc); min-height: 30px; }
   .lt-td.done .grow { color: var(--text-3); text-decoration: line-through; }
   .lt-td .b-txt { height: 24px; padding: 0 4px; }
   .lt-ck { width: 16px; height: 16px; border-radius: 5px; border: 1.5px solid var(--line-2); display: grid; place-items: center; color: #fff; flex: none; }
   .lt-td.done .lt-ck { background: var(--accent); border-color: var(--accent); }
   .lt-ck .ic { width: 11px; height: 11px; }
-  .lt-desk { position: relative; min-height: 420px; background: repeating-linear-gradient(135deg, transparent 0 22px, color-mix(in srgb, var(--text) 3%, transparent) 22px 23px), var(--bg); }
-  .lt-desk-l { position: absolute; left: 16px; top: 12px; }
-  .lt-pet { position: absolute; right: 24px; bottom: 34px; display: flex; align-items: flex-end; gap: 12px; flex-direction: row-reverse; }
-  .lt-pet-fig { width: 120px; height: 160px; border-radius: 60px 60px 16px 16px; display: grid; place-items: end center; }
-  .lt-pet-fig .lt-av { width: 120px; height: 160px; border-radius: 60px 60px 16px 16px; background-position: center 10%; }
   .lt-pet-miss { width: 150px; padding: 14px; border-radius: var(--card-r); border: 1px dashed var(--line-2); background: var(--panel); display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; font-size: var(--fs-desc); color: var(--text-2); }
   .lt-pet-miss .ic { width: 16px; height: 16px; color: var(--accent); }
   .lt-pw { width: 250px; padding: 12px; border-radius: var(--card-r); border: 1px solid var(--line); background: var(--panel); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
@@ -1159,47 +1123,22 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .ng-chars .opt b { font-size: var(--fs-label); }
 
   /* ===== 角色表现 / 角色库 ===== */
-  .lk-hint { margin: 0; }
-  .lk-hint > summary > .ic:first-child { width: 14px; height: 14px; color: var(--accent); }
-  .lk-g { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-  .ex-g { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-  .lk-card, .ex-c { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
   .lk-img { position: relative; aspect-ratio: 4 / 5; background: var(--bg) center 8% / 150% no-repeat; border-bottom: 1px solid var(--line); display: grid; place-items: center; }
-  .lk-card:first-child .lk-img { background-size: 260%; background-position: 50% 9%; }
   .lk-img.none { background: repeating-linear-gradient(135deg, transparent 0 10px, color-mix(in srgb, var(--text) 4%, transparent) 10px 11px), var(--bg); }
   .lk-img .pill { position: absolute; left: 10px; top: 10px; background: var(--panel); }
   .lk-b { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 4px; }
   .lk-b b { font-size: var(--fs-label); }
-  .lk-acts { display: flex; gap: 6px; margin-top: 8px; }
   .lk-tools, .lb-tools { display: flex; align-items: center; gap: 12px; }
   .pg-body > .lb-tools + .lb-tags { margin-top: -12px; }
   .lb-tools .search { max-width: 320px; }
   .lb-tags { display: flex; gap: 6px; }
-  .lb-l .lb-r { display: flex; align-items: center; gap: 14px; padding: 12px var(--card-pad); border: 0; border-radius: 0; background: none; }
-  .lb-l .lb-r + .lb-r { border-top: 1px solid var(--line); }
-  .lb-r.cur { background: color-mix(in srgb, var(--accent) 4%, transparent); }
-  .lb-r .grow { min-width: 0; }
-  .lb-r b { font-size: var(--fs-label); margin-right: 6px; }
-  .lb-r .pill { height: 20px; margin-right: 4px; }
-  .lb-r .pill.on { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 40%, transparent); background: var(--accent-bg); }
-  .lb-r .desc { display: block; margin-top: 2px; }
   .lb-av { width: 40px; height: 40px; border-radius: 50%; flex: none; display: grid; place-items: center; background: var(--accent-bg) 50% 10% / 260% no-repeat; color: var(--accent); font-weight: 600; font-size: var(--fs-label); }
-  .lb-r .mn-anchor .b-txt { width: 32px; padding: 0; justify-content: center; font-size: 16px; }
-  .lb-r .mn { right: 0; left: auto; }
   .imp-drop { border: 1px dashed var(--line-2); margin: 12px 0; padding: 28px 16px; }
-  @container (max-width: 640px) { .lk-g { grid-template-columns: 1fr 1fr; } .ex-g { grid-template-columns: 1fr 1fr; } }
-
   /* ===== 世界 / NPC / 人设助手 ===== */
-  .pl-r { padding: 12px var(--card-pad); }
-  .pl-th { width: 96px; height: 54px; border-radius: 8px; flex: none; background: var(--bg) center / cover no-repeat; display: grid; place-items: center; font-size: 11px; color: var(--text-3); border: 1px solid var(--line); }
   .xr-h .npc-av.lb-av { width: 32px; height: 32px; font-size: 12px; }
   .xr-h .mn-anchor .b-txt { width: 28px; padding: 0; justify-content: center; font-size: 16px; }
   .xr-h .mn { right: 0; left: auto; }
   .hp-tools { display: flex; align-items: center; gap: 10px; }
-  .hp-chat { padding: 0; display: flex; flex-direction: column; min-height: 260px; overflow: hidden; }
-  .hp-chat .lt-msgs .notice { margin-top: 4px; }
-  .hp-prop { display: flex; flex-direction: column; gap: 12px; }
-  .hp-prop .sec-hd { margin: 0; }
   .hp-f b { display: block; font-size: var(--fs-desc); margin-bottom: 6px; }
   .hp-f .cmp .desc { display: block; margin-bottom: 2px; }
   /* 记忆：筛选条吸顶（在下划线标签下面）；来源已回退分组用玫瑰色小标题 */
@@ -1213,7 +1152,7 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .lock-bar .lk > .ic { width: 16px; height: 16px; color: var(--accent); flex: none; }
   .lock-bar .lk b { display: block; font-size: 13px; color: var(--accent); }
   .lock-bar .lk .desc { display: block; }
-  .dialogue.locked .input-row, .dialogue.locked textarea:disabled { opacity: .6; }
+  .dialogue.locked textarea:disabled { opacity: .6; }
   .nt { flex-wrap: wrap; row-gap: 4px; }
   .nt .tx { flex: 1 1 170px; min-width: 0; }
   .nt .na + .na { margin-left: -4px; }
@@ -1296,7 +1235,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .bv-hi.on { border-color: var(--accent); } .bv-hi .lk-img { border-radius: 6px; } .bv-hi small { font-size: 10px; color: var(--text-3); display: flex; flex-wrap: wrap; gap: 3px; align-items: center; }
   .bv-hi .pill { height: 16px; padding: 0 5px; font-size: 10px; }
   .lb-gh { font-size: var(--fs-desc); color: var(--text-2); font-weight: 600; margin: 16px 2px 8px; display: flex; align-items: center; gap: 6px; }
-  .lb-ph { padding: 14px var(--card-pad); }
   .ad-card { margin-bottom: 6px; } .ad-card p { margin: 6px 0; font-size: var(--fs-desc); }
   .mdl .seg2 { margin-bottom: 8px; }
   .mdl label.imp-f, .mdl .imp-f { display: flex; margin: 0; font-weight: 400; color: var(--text); }
@@ -1336,7 +1274,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .we-i small { font-size: 10px; color: var(--text-3); } .we-i.on { background: var(--accent-bg); color: var(--accent); font-weight: 600; } .we-i .ic { width: 14px; height: 14px; }
   .we-gh { font-size: 11px; color: var(--text-3); padding: 10px 10px 4px; } .we-add { margin-top: 6px; border: 1px dashed var(--line-2); justify-content: center; }
   .we-form { flex: 1; min-width: 0; } .we-form .sec-t { margin: 0 0 14px; display: flex; gap: 6px; align-items: center; }
-  .we-sub { font-size: var(--fs-label); margin: 18px 0 10px; }
   .we-form label.fchip input { display: none; } .we-form label.fchip { display: inline-flex; align-items: center; cursor: pointer; }
   .we-advb { margin-top: 14px; display: inline-flex; gap: 6px; align-items: center; } .we-advb[aria-expanded=true] .ic { transform: rotate(180deg); }
   .we-adv { display: none; margin-top: 8px; } .we-adv.open { display: block; }
@@ -1372,16 +1309,12 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .st-card .sec-t { font-size: var(--fs-label); margin-bottom: 8px; } .st-card .sec-hd { margin-bottom: 6px; }
   .st-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; } .st-row + .st-row { border-top: 1px solid var(--line); }
   .st-row .tx { flex: 1; min-width: 0; } .st-row .lb { font-size: var(--fs-label); } .st-row select { height: 32px; border-radius: var(--in-r); border: 1px solid var(--line-2); background: var(--panel); padding: 0 8px; font: inherit; font-size: var(--fs-desc); }
-  .st-pend { display: flex; align-items: center; gap: 6px; margin: 0; } .st-pend .ic { width: 14px; height: 14px; color: var(--accent); }
   .md-cur { display: flex; align-items: center; gap: 12px; } .md-cur select { height: 34px; border-radius: var(--in-r); border: 1px solid var(--line-2); background: var(--panel); padding: 0 8px; font: inherit; font-size: var(--fs-desc); max-width: 260px; }
   .md-ic { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; background: var(--accent-bg); color: var(--accent); font-weight: 700; flex: none; }
   .md-ic.sm { width: 28px; height: 28px; border-radius: 8px; font-size: 12px; margin-right: 10px; }
-  .md-g { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
-  .md-p { display: flex; align-items: center; gap: 0; padding: 10px 12px; text-align: left; } .md-p .grow { display: flex; flex-direction: column; } .md-p:hover { border-color: var(--accent); } .md-p > .ic { width: 14px; height: 14px; color: var(--text-3); }
   .st-advb { margin-top: 10px; display: inline-flex; gap: 4px; align-items: center; } .st-advb[aria-expanded=true] .ic { transform: rotate(180deg); }
-  .st-adv { margin-top: 8px; padding: 12px; border-radius: 10px; background: var(--panel-2); }
   .st-acts { display: flex; align-items: center; gap: 8px; margin-top: 12px; }
-  .st-dev { margin-top: 12px; } .st-dv { padding: 10px 0; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; } .st-dv + .st-dv { border-top: 1px solid var(--line); }
+  .st-dv { padding: 10px 0; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; } .st-dv + .st-dv { border-top: 1px solid var(--line); }
   .st-dv h3 { margin: 0; font-size: var(--fs-label); }
   /* ---- 立绘：空白区居中 / 收起成小头像 / 看立绘 / 重叠时实色 ---- */
   .c-av { display: none; align-items: center; gap: 5px; margin-right: 6px; flex: none; }
@@ -1396,14 +1329,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .app.peek .dialogue { opacity: 0; transition: opacity .15s ease; }
   .dialogue.over { --card-bg: color-mix(in srgb, var(--panel) 97%, transparent) !important; background: var(--card-bg) !important; }
   .dialogue.over .mat { display: none !important; }
-  .d-foot { justify-content: flex-start; } .d-foot > .grow { flex: 1; min-width: 0; }
-  .d-foot .mem-ref { white-space: nowrap; flex: none; }
-  .kb-hint { position: relative; flex: none; }
-  .kb-q { width: 18px; height: 18px; border-radius: 50%; border: 1px solid var(--line-2); font-size: 11px; line-height: 1; color: var(--text-3); display: grid; place-items: center; }
-  .kb-q:hover, .kb-q:focus-visible { color: var(--accent); border-color: var(--accent); }
-  .kb-tip { position: absolute; right: 0; bottom: calc(100% + 8px); z-index: 30; display: flex; flex-direction: column; gap: 4px; min-width: 200px; padding: 10px 12px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); box-shadow: var(--shadow); font-size: 12px; color: var(--text-2); white-space: nowrap; opacity: 0; transform: translate3d(0,4px,0); pointer-events: none; transition: opacity .12s ease, transform .12s ease; }
-  .kb-tip b { color: var(--text); font-size: 12px; }
-  .kb-hint:hover .kb-tip, .kb-hint:focus-within .kb-tip { opacity: 1; transform: none; }
   .hist-bar #histInfo { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
   .c-av .av { width: 24px !important; height: 24px !important; min-width: 24px; padding: 0 !important; flex: none; border-radius: 50%; background-size: cover; }
   /* ---- 统一的页面关闭：✕ 固定在页面（窗口内容区）右上角，所有页面同一位置；页面右侧统一留 64px 给 ✕，页头按钮不会碰到 ---- */
@@ -1462,7 +1387,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .app.lmini .lnav-scroll.f-t.f-b { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 22px, #000 calc(100% - 22px), transparent 100%); mask-image: linear-gradient(to bottom, transparent 0, #000 22px, #000 calc(100% - 22px), transparent 100%); }
 
   /* ================= 左栏：标题行带收起按钮 / 悬停与当前页 / 提示气泡 / 动画曲线 ================= */
-  .lnav-top { display: none; }
   .lgrp.lg1 { display: flex; align-items: center; justify-content: space-between; margin: 2px 0 4px 10px; height: 32px; }
   .lgrp.lg1 > span { overflow: hidden; white-space: nowrap; }
   .lgrp.lg1 #lnavBtn { flex: none; width: 30px; height: 30px; letter-spacing: 0; }
@@ -1497,15 +1421,14 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .nav-more.q2con { position: fixed; left: var(--con-l, 64px); top: auto; bottom: 22px; z-index: 41; min-width: 230px; max-height: calc(100vh - 80px); overflow-y: auto; }
   .q2con .hide-ctl { display: none !important; }
   /* ===== 卡片底部（动作胶囊行 + 输入区 + 状态行）实心底：上面的半透明材质不会让背后文字/图案透出来；顶端一小段渐隐过渡 ===== */
-  .dialogue .quick, .dialogue .d-input, .dialogue .d-foot { position: relative; background: var(--panel); margin-left: -16px !important; margin-right: -16px !important; padding-left: 16px; padding-right: 16px; }
+  .dialogue .quick, .dialogue .d-input { position: relative; background: var(--panel); margin-left: -16px !important; margin-right: -16px !important; padding-left: 16px; padding-right: 16px; }
   .dialogue .quick { margin-top: 0 !important; padding-top: 8px; }
   .dialogue .quick::before { content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: 12px; background: linear-gradient(transparent, var(--panel)); pointer-events: none; }
   .dialogue .d-input { margin-top: 0 !important; padding-top: 8px; border-top: 0; box-shadow: inset 0 1px 0 var(--line); }
   .dialogue .d-input { background-clip: padding-box; }
-  .dialogue .d-foot { margin-top: 0 !important; padding-top: 8px; margin-bottom: -10px; padding-bottom: 10px; border-radius: 0 0 17px 17px; }
-  .lay-a .dialogue .d-input, .lay-a .dialogue .d-foot { padding-top: 6px; }
+  .lay-a .dialogue .d-input { padding-top: 6px; }
   .dialogue .quick { box-shadow: 0 8px 0 var(--panel); }
-  html[data-mat="blur"] .dialogue .quick, html[data-mat="blur"] .dialogue .d-input, html[data-mat="blur"] .dialogue .d-foot { z-index: 1; }
+  html[data-mat="blur"] .dialogue .quick, html[data-mat="blur"] .dialogue .d-input { z-index: 1; }
   .walk-btn { height: 26px; padding: 0 10px; font-size: 12px; margin-top: 6px; border-radius: 8px; }
   .walk-btn:disabled { opacity: .55; cursor: default; }
   .pp-act { display: flex; justify-content: flex-end; margin: -2px 0 4px; }
@@ -1533,11 +1456,8 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
 /* T33 */ .st-advflat { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 4px; } .st-advflat .ls-row { padding-left: 0; padding-right: 0; } .st-sub { padding-left: 0 !important; } .st-subh, .sec-t { text-align: left; } .st-f .st-advp .ls-row { padding-left: 0; padding-right: 0; }
   .st-advb .ic { width: 13px; height: 13px; transition: transform .15s ease; } .st-advb[aria-expanded="true"] .ic { transform: rotate(180deg); }
   .st-f { display: flex; flex-direction: column; gap: 14px; padding: 4px var(--card-pad, 16px) 8px; }
-  .st-pvg { display: flex; align-items: center; gap: 10px; margin-top: 6px; } .st-pvg > small { width: 56px; flex: none; color: var(--text-3); font-size: 11.5px; }
   .st-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #3f9a6b; margin-left: 2px; vertical-align: middle; }
-  .st-na { font-size: 10.5px; color: var(--text-3); }
   .st-ms { display: flex; gap: 8px; align-items: center; } .st-ms .search { flex: 1; }
-  .st-ml { margin-top: 8px; max-height: 132px; overflow-y: auto; }
   .st-key { display: flex; align-items: center; gap: 8px; min-height: 36px; } .st-key input { flex: 1; } .st-km { font-family: ui-monospace, monospace; font-size: 12.5px; color: var(--text-2); }
   .pill.ok { color: #2f7d55; background: color-mix(in srgb, #3f9a6b 14%, transparent); } .pill.warn { color: #9a5b1c; background: color-mix(in srgb, #d08a3c 16%, transparent); }
   .st-test { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding-top: 4px; }
@@ -1547,7 +1467,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .st-gate { margin: -6px 0 0; }
   .st-acts { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 12px var(--card-pad, 16px) 4px; }
   .st-num { width: 72px; height: 32px; text-align: right; }   /* T29：实际样式见 9-t29 的 .numf */
-  .st-col { flex-direction: column; align-items: stretch; gap: 8px; } .st-col .seg2 { align-self: flex-start; }
   .st-sub { display: flex; align-items: center; gap: 8px; }
   .st-h3 { margin: 14px var(--card-pad, 16px) 2px; font-size: 12px; font-weight: 600; color: var(--text-3); letter-spacing: .04em; }
   .st-anchors { padding: 0 var(--card-pad, 16px) 4px; }
@@ -1656,7 +1575,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .st-tabs button { padding: 8px 14px; font-size: var(--fs-label); color: var(--text-2); border-bottom: 2px solid transparent; margin-bottom: -1px; }
   .st-tabs button.on { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
   .st-back { display: flex; align-items: center; gap: 10px; }
-  .st-need { align-items: center; }
   @container (max-width: 900px) { .st-mbar { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   /* T8 运行观测 */
   .ob-sum { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 12px 0; }
@@ -1677,10 +1595,7 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .ob-n, .ob-t { font-variant-numeric: tabular-nums; text-align: right; }
   .st-sd.bad { background: #d9534f; opacity: 1; }
   .pill.bad { color: #d9534f; border-color: color-mix(in srgb, #d9534f 40%, transparent); background: color-mix(in srgb, #d9534f 10%, transparent); }
-  .ob-d { padding: 10px 12px 12px 36px; background: var(--panel-2); border-top: 1px dashed var(--line); }
-  .ob-d .kvs { display: grid; grid-template-columns: 90px 1fr; gap: 4px 12px; font-size: var(--fs-desc); } .ob-d .kvs b { color: var(--text-3); font-weight: 400; }
-  .ob-err { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 8px 10px; border-radius: 8px; color: #d9534f; background: color-mix(in srgb, #d9534f 10%, transparent); font-size: var(--fs-desc); }
-  .ob-err .ic { width: 14px; height: 14px; } .ob-err code, .ob-pre pre { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+  .ob-pre pre { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
   .ob-pre { margin-top: 12px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
   .ob-ph { display: flex; align-items: center; padding: 8px 12px; background: var(--panel-2); font-size: var(--fs-desc); }
   .ob-pre pre { margin: 0; padding: 12px; font-size: 12px; line-height: 1.6; white-space: pre-wrap; color: var(--text-2); max-height: 260px; overflow: auto; }
@@ -1699,7 +1614,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .ob-tb .muted { color: var(--text-3); }
   .ob-bar { display: inline-block; vertical-align: middle; width: 48px; height: 4px; margin-right: 8px; border-radius: 2px; background: var(--line); overflow: hidden; }
   .ob-bar i { display: block; height: 100%; background: var(--accent); transform-origin: left; }
-  .ob-mm { margin-left: 6px; font-size: 11px; color: var(--text-3); } .ob-mm:hover { color: var(--accent); }
   .ob-hops { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 14px; font-size: var(--fs-desc); }
   .ob-hh { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
   .ob-hr { display: grid; grid-template-columns: 1fr 60px 100px 100px; gap: 10px; padding: 3px 0; color: var(--text-2); }
@@ -1718,8 +1632,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .ob-r.warn .ob-st { color: #d9a441; } .ob-r.mute .ob-st { color: var(--text-3); }
   .st-sd.mute { background: var(--text-3); opacity: .8; }
   .pill.warn { color: #d9a441; border-color: color-mix(in srgb, #d9a441 40%, transparent); background: color-mix(in srgb, #d9a441 10%, transparent); }
-  .ob-err.warn { color: #d9a441; background: color-mix(in srgb, #d9a441 10%, transparent); }
-  .ob-err.mute { color: var(--text-2); background: color-mix(in srgb, var(--text) 6%, transparent); }
   .ob-hint { display: inline-flex; vertical-align: -2px; color: #d9a441; cursor: help; } .ob-hint .ic { width: 13px; height: 13px; }
   .ob-tb tr.hintr td { height: 30px; color: #d9a441; font-size: 12px; background: color-mix(in srgb, #d9a441 7%, transparent); } .ob-tb tr.hintr .ic { width: 13px; height: 13px; vertical-align: -2px; margin-right: 6px; }
   .ob-tb tr.empty td { color: var(--text-3); } .ob-tb tr.empty td:first-child { color: var(--text-3); }
@@ -1729,7 +1641,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .ob-gh .desc { font-weight: 400; }
 
   .ob-sum b { font-size: 15px; }
-  .ob-err { flex-wrap: wrap; } .ob-err code { white-space: nowrap; }
   /* T7b 快捷键录制 / 本地连接提示 */
   .kb-cap { display: inline-flex; align-items: center; gap: 4px; min-width: 96px; justify-content: center; height: 30px; padding: 0 10px; border-radius: 8px; border: 1px solid var(--line-2); background: var(--panel-2); font: 600 12px ui-monospace, Consolas, monospace; color: var(--text); box-shadow: 0 1px 0 var(--line-2); }
   .kb-cap:hover { border-color: var(--accent); } .kb-cap.rec { border-color: var(--accent); color: var(--accent); font-family: inherit; font-weight: 400; }
@@ -1786,7 +1697,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .stage.mid-narrow .quick .q-ov { display: none; }
   .stage.mid-narrow .quick .q-more-a { display: inline-flex; }
   /* 状态点 + 发送 */
-  .quick .kb-hint .kb-q { width: 22px; height: 22px; }
   .quick .st-dot { position: relative; width: 28px; height: 28px; padding: 0; margin: 0 2px 0 4px; justify-content: center; border: 0; border-radius: 8px; background: transparent; }
   .quick .st-dot:hover, .quick .st-dot[aria-expanded="true"] { background: var(--panel); }
   .quick .st-dot .dot { width: 9px; height: 9px; border-radius: 50%; background: #3f9d6a; box-shadow: 0 0 0 3px color-mix(in srgb, #3f9d6a 18%, transparent); }
@@ -1845,6 +1755,7 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   .sched .s-meta { display: flex; gap: 4px; white-space: nowrap; } .sched .s-meta:empty { display: none; }
   .sched .s-pri { font-style: normal; font-size: 11px; font-weight: 400; color: var(--text-3); } .sched .s-pri.hi { color: var(--accent); }
   .sched .s-now { font-style: normal; font-size: 10px; font-weight: 600; color: var(--accent); }
+  .sched .s-miss { font-style: normal; font-size: 10px; color: var(--text-3); }
   .sched li.cur { box-shadow: inset 2px 0 0 var(--accent); padding-left: 6px; margin-left: -8px; }   /* T57 22:40：进行中左侧 2px 主色竖线 */
   .sched.all { max-height: 280px; overflow-y: auto; overscroll-behavior: contain; scroll-behavior: auto; }   /* T57 */
   .sched li { grid-template-columns: 46px minmax(0, 1fr); } .sched li span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -1866,8 +1777,6 @@ h.setAttribute('data-route',r);h.setAttribute('data-route-pending','');})();
   /* 二次确认弹窗里的长名字：单行省略（title 看全名） */
   .q2-nm { white-space: nowrap; }   /* T17：截断在 JS 里按字做（8-t11b），这里只防折行 */
   /* 知识库：标题单行省略，来源 URL 中间省略 */
-  .kn-tx { min-width: 0; flex: 1; } .kn-tx .lb { display: block; }
-  .kn-src { display: flex; gap: 6px; min-width: 0; } .kn-src .kn-k { flex: none; } .kn-src [data-midell] { flex: 0 1 auto; }
   /* F2 · 角色库「玩家角色」小标签 */
   .lb-tg .pill.lb-user { color: var(--accent); background: var(--accent-bg); }
   /* T9 · 运行观测「登录报告」：沿用请求记录列表（.ob-list / .ob-g / .ob-gh）的样式 */
@@ -2121,7 +2030,7 @@ else if(!p&&innerWidth-(a.classList.contains('lmini')?56:208)-300<520){a.classLi
           <button class="c-more" data-act="hist" title="展开历史（H）" aria-label="展开历史（H）"><svg class="ic"><use href="#i-cu"/></svg></button>
         </div>
         <div class="log-wrap" id="logWrap"><div class="log" id="log">
-          <div class="turn" data-chg='{"fav":1,"mem":true,"reason":"情动 · 他主动来帮忙"}'>
+          <div class="turn" data-chg='{"fav":1,"mem":true,"reason":"他主动来帮忙"}'>
             <div class="d-body">
               <!-- T86（Jay 10/17）：测试用长回复，只换文字，样式沿用旁白 narr / 台词 speech / 心声 inner -->
               <div class="narr">中午在岛台餐区靠着眯了一阵醒来，她便自己走回二楼的主卧。在工学椅里稍作歇息，大半个下午的精力全耗在了裁衣台前。此刻她坐在桌前微仰起头，腕上的草莓绒球手环随着动作轻晃，指尖还沾着几抹淡淡的划粉印子。瞧见他也在这屋里，她唇角微翘露出尖尖的小虎牙，带着几分藏不住的得意开口：</div> 
@@ -2433,7 +2342,13 @@ window.Q2_WEB_KNOWLEDGE = [{"mock": true, "id": 1, "query_normalized": "雾港�
    敏感个人信息（证件号、电话等）一律不出现 / 用假值打码。
    ===================================================================================== */
 /* T69：「现在」跟系统时间走（时:分、星期）；第几天仍是第 11 天 */
-window.Q2_NOW = function () { var d = new Date(), h = d.getHours(), m = d.getMinutes(), w = d.getDay(); return { hm: (h < 10 ? '0' : '') + h + ':' + (m < 10 ? '0' : '') + m, min: h * 60 + m, wk: '周' + '日一二三四五六'[w], set: (w === 0 || w === 6) ? 'weekend' : 'weekday' }; };
+/* T45b：「推进时间」后的偏移，单位分钟，只增不减、不存盘（刷新页面回到 0 = 真实时间）；跨过 00:00 按 24 小时取模，星期和「第 N 天」不变。
+   Q2_TIMEOFS 只读；Q2_TIMEADD(n) 只给推进用，n ≤ 0 时不变 */
+(function () { var ofs = 0;
+  window.Q2_NOW = function () { var d = new Date(), w = d.getDay(), t = ((d.getHours() * 60 + d.getMinutes() + ofs) % 1440 + 1440) % 1440, h = Math.floor(t / 60), m = t % 60; return { hm: (h < 10 ? '0' : '') + h + ':' + (m < 10 ? '0' : '') + m, min: t, wk: '周' + '日一二三四五六'[w], set: (w === 0 || w === 6) ? 'weekend' : 'weekday' }; };
+  Object.defineProperty(window, 'Q2_TIMEOFS', { get: function () { return ofs; }, enumerable: true });
+  window.Q2_TIMEADD = function (n) { n = Math.round(+n || 0); if (n > 0) ofs += n; return ofs; };
+})();
 window.Q2_DATA = {
   // 存档分区（示例）：自动写入当前存档；切换 = 读档
   saves: [
@@ -2553,7 +2468,7 @@ window.Q2_DATA = {
   story: { days: 42, turns: 1286, stage: '恋人', memories: 12, diaries: 37,
     events: [
       { day: 1, title: '社团招新那天认识', d: '+3 好感' }, { day: 7, title: '第一次一起回家', d: '+2 好感 · +2 信任' }, { day: 18, title: '雷雨夜陪她到雨停', d: '+4 信任' },
-      { day: 25, title: '一起去买布料', d: '+2 好感' }, { day: 30, title: '储藏室台灯下的告白 · 成为恋人', d: '阶段：暧昧 → 恋人', lvl: true }, { day: 41, title: '收到她做的配角服', d: '+3 好感 · +1 情动' } ] },
+      { day: 25, title: '一起去买布料', d: '+2 好感' }, { day: 30, title: '储藏室台灯下的告白 · 成为恋人', d: '阶段：暧昧 → 恋人', lvl: true }, { day: 41, title: '收到她做的配角服', d: '+3 好感' } ] },
   player: { name: '你', nick: '学长', age: 22, gender: '男', job: '新曜大学 · 计算机系研究生', looks: '高个子，戴细框眼镜', personality: '话不多，靠谱，偶尔冷幽默', relation: '社团前辈 → 恋人', notes: '不吃辣；怕猫但会假装不怕', phone: '138****0000（已打码，示例）' },
   // 角色库（示例：只有苏念念是真实角色数据，其余为样稿编的）
   characters: [
@@ -2695,7 +2610,7 @@ window.Q2_DATA = {
     const TAG = { meal: '吃饭', leisure: '消遣', hygiene: '梳洗', housework: '家务', free_time: '空闲', rest: '歇会', work: '工作', social: '相伴', study: '学习', sleep: '睡觉' } /* copywriting.md 第 23 组 */, PN = Object.fromEntries(P.map(p => [p[0], p[1]])), PRI = { high: '重要', medium: '普通', low: '低' }, mn = s => +s.slice(0, 2) * 60 + +s.slice(3, 5), NOW = Q2_NOW().min, stOf = (a, b, o, N) => { const s0 = mn(a), e0 = mn(b); if (o) return (N < e0 || N >= s0) ? 'cur' : 'next'; return e0 <= N ? 'done' : s0 <= N ? 'cur' : 'next'; };   // T69：按系统时间算；跨夜那条（endDayOffset）早上结束前也算进行中
     window.Q2_SCHST = () => { const N = Q2_NOW().min; D.schedule.today.forEach(x => { x.st = stOf(x.t, x.end, x.endDayOffset, N); }); };
     window.Q2_SCHLI = x => { const e = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]); const pri = x.pri === '重要' ? '<i class="s-pri hi">重要</i>' : ''   /* 22:46 Pip：「低」也不显示 */;   // T57 22:40：优先级在时间段右侧，「普通」不显示
-      return '<li class="' + (x.st === 'done' ? 'done' : x.st === 'cur' ? 'cur' : '') + '"><time>' + x.t + '</time><span class="s-act" title="' + e(x.act) + '">' + e(x.act) + '</span><span class="s-meta">' + (x.st === 'cur' ? '<i class="s-now">进行中</i>' : '') + pri + '</span></li>'; };
+      return '<li class="' + (x.st === 'done' ? 'done' : x.st === 'cur' ? 'cur' : '') + (x.missed ? ' miss' : '') + '"><time>' + x.t + '</time><span class="s-act" title="' + e(x.act) + '">' + e(x.act) + '</span><span class="s-meta">' + (x.st === 'cur' ? '<i class="s-now">进行中</i>' : '') + (x.missed ? '<i class="s-miss">未发生</i>' : '') + pri + '</span></li>'; };
     const T68 = {"晨起更衣 / 08:10-08:25":["蜜桃粉无痕高弹提臀三分瑜伽热裤","十字腿环搭扣防滑纯白冰丝长筒袜","米白软底居家拖鞋"],"晨间洗漱 / 08:25-08:45":["蜜桃粉无痕高弹提臀三分瑜伽热裤","十字腿环搭扣防滑纯白冰丝长筒袜","米白软底居家拖鞋"],"烹热早点 / 08:45-09:05":["蜜桃粉无痕高弹提臀三分瑜伽热裤","十字腿环搭扣防滑纯白冰丝长筒袜","米白软底居家拖鞋"],"享用早餐 / 09:05-09:30":["蜜桃粉无痕高弹提臀三分瑜伽热裤","十字腿环搭扣防滑纯白冰丝长筒袜","米白软底居家拖鞋"],"机制推演 / 09:30-10:00":["蜜桃粉无痕高弹提臀三分瑜伽热裤","十字腿环搭扣防滑纯白冰丝长筒袜","米白软底居家拖鞋","玫瑰金超轻钛架防蓝光电竞平光镜"],"天梯冲分 / 10:00-11:15":["蜜桃粉无痕高弹提臀三分瑜伽热裤","十字腿环搭扣防滑纯白冰丝长筒袜","米白软底居家拖鞋","粉色发光猫耳无线电竞耳机"],"攻坚领主 / 11:15-12:15":["蜜桃粉无痕高弹提臀三分瑜伽热裤","十字腿环搭扣防滑纯白冰丝长筒袜","米白软底居家拖鞋","粉色发光猫耳无线电竞耳机"],"智烹午餐 / 12:15-12:40":["蜜桃粉无痕高弹提臀三分瑜伽热裤","十字腿环搭扣防滑纯白冰丝长筒袜","米白软底居家拖鞋","粉色发光猫耳无线电竞耳机"],"享用午餐 / 12:40-13:10":["蜜桃粉无痕高弹提臀三分瑜伽热裤","十字腿环搭扣防滑纯白冰丝长筒袜","米白软底居家拖鞋","粉色发光猫耳无线电竞耳机"],"起居消食 / 13:10-13:40":["蜜桃粉无痕高弹提臀三分瑜伽热裤","十字腿环搭扣防滑纯白冰丝长筒袜","米白软底居家拖鞋","粉色发光猫耳无线电竞耳机"],"椅内小憩 / 13:40-14:20":["蜜桃粉无痕高弹提臀三分瑜伽热裤","十字腿环搭扣防滑纯白冰丝长筒袜","米白软底居家拖鞋","粉色发光猫耳无线电竞耳机"],"整理裁料 / 14:20-14:40":["浅花灰毛圈棉毛边居家超短运动裤","十字腿环搭扣防滑纯白冰丝长筒袜","米白软底居家拖鞋","草莓绒球磁吸插针裁缝手环"],"旗袍打版 / 14:40-15:40":["浅花灰毛圈棉毛边居家超短运动裤","十字腿环搭扣防滑纯白冰丝长筒袜","米白软底居家拖鞋","草莓绒球磁吸插针裁缝手环"],"车缝锁边 / 15:40-16:40":["浅花灰毛圈棉毛边居家超短运动裤","十字腿环搭扣防滑纯白冰丝长筒袜","米白软底居家拖鞋","草莓绒球磁吸插针裁缝手环"],"冲调热饮 / 16:40-17:05":["浅花灰毛圈棉毛边居家超短运动裤","十字腿环搭扣防滑纯白冰丝长筒袜","米白软底居家拖鞋","草莓绒球磁吸插针裁缝手环"],"手工盘扣 / 17:05-17:50":["浅花灰毛圈棉毛边居家超短运动裤","十字腿环搭扣防滑纯白冰丝长筒袜","米白软底居家拖鞋","草莓绒球磁吸插针裁缝手环"],"试穿新衣 / 17:50-18:25":["自制月白暗纹织锦水滴领高开叉改良短旗袍","米白软底居家拖鞋","挂着量衣小银剪吊坠的蕾丝颈带"],"烹饪晚饭 / 18:25-18:50":["自制月白暗纹织锦水滴领高开叉改良短旗袍","米白软底居家拖鞋","挂着量衣小银剪吊坠的蕾丝颈带"],"共进晚餐 / 18:50-19:30":["自制月白暗纹织锦水滴领高开叉改良短旗袍","米白软底居家拖鞋","挂着量衣小银剪吊坠的蕾丝颈带"],"餐后整理 / 19:30-19:50":["自制月白暗纹织锦水滴领高开叉改良短旗袍","米白软底居家拖鞋","挂着量衣小银剪吊坠的蕾丝颈带"],"双人联机 / 19:50-20:50":["自制月白暗纹织锦水滴领高开叉改良短旗袍","米白软底居家拖鞋","挂着量衣小银剪吊坠的蕾丝颈带"],"揉按放松 / 20:50-21:35":["自制月白暗纹织锦水滴领高开叉改良短旗袍","米白软底居家拖鞋","挂着量衣小银剪吊坠的蕾丝颈带"],"浴缸泡澡 / 21:35-22:20":[],"吹发润肤 / 22:20-22:45":["奶白猫耳浴后抹胸裹身短浴裙","米白软底居家拖鞋","粉白兔耳吸水珊瑚绒干发帽"],"赏玩卡带 / 22:45-23:30":["香槟金重磅真丝挂脖露背短睡裙","米白软底居家拖鞋"],"抱偶入眠 / 23:30-08:20":["香槟金重磅真丝挂脖露背短睡裙"]};   // T68：notes/T68-schedule-clothing.json，已按 D6 过滤，没中文名的不显示
     /* T83（D11）：日程详情里的服装只显示短名（例：瑜伽热裤 · 长筒袜），全名留在右栏穿搭卡和衣柜；短名表为代码2 暂定，待 copywriting 确认；表里没有的照旧显示全名 */
     const OSHORT = {"蜜桃粉无痕高弹提臀三分瑜伽热裤": "瑜伽热裤", "十字腿环搭扣防滑纯白冰丝长筒袜": "长筒袜", "米白软底居家拖鞋": "居家拖鞋", "玫瑰金超轻钛架防蓝光电竞平光镜": "平光镜", "粉色发光猫耳无线电竞耳机": "猫耳耳机", "草莓绒球磁吸插针裁缝手环": "裁缝手环", "粉白兔耳吸水珊瑚绒干发帽": "干发帽", "挂着量衣小银剪吊坠的蕾丝颈带": "蕾丝颈带", "奶白猫耳浴后抹胸裹身短浴裙": "短浴裙", "浅花灰毛圈棉毛边居家超短运动裤": "超短运动裤", "香槟金重磅真丝挂脖露背短睡裙": "真丝睡裙", "自制月白暗纹织锦水滴领高开叉改良短旗袍": "改良旗袍"};
@@ -3036,24 +2951,39 @@ window.Q2_DATA = {
     plH.classList.remove('ready'); portrait.classList.remove('hready'); const im = new Image(); im.decoding = 'async'; im.src = src;
     im.decode().then(() => { if (tok !== phTok) return; plH.src = src; return plH.decode(); }).then(() => { if (tok === phTok) { plH.classList.add('ready'); portrait.classList.add('hready'); } }, () => {}); }
 
-  /* ---------- 推进时间：只改右栏 3 处 textContent + 日程高亮 ---------- */
-  // 推进时间（示例）：从当前时间沿真实日程往后走；时间与天气为示意
-  const STEPS = (() => { const D0 = window.Q2_DATA, T = D0.schedule.today, ci = Math.max(0, T.findIndex(x => x.st === 'cur')), w = D0.status.weather;
-    const st = [{ t: D0.status.time, w, cur: 1 }]; T.slice(ci + 1).forEach((x, i) => st.push({ t: x.t, w: i ? '雨停 · 有点凉' : w, cur: 2 + i })); st.push({ t: '00:00', w: '雨停 · 有点凉', cur: 4 }); return st; })();
-  let step = 0; const vTime = $('vTime'), vWeather = $('vWeather'), items = $('sched').children;
-  window.Q2_TICKNEXT = () => STEPS[(step + 1) % STEPS.length].t;   /* T45：只读，给「推进到 HH:MM？」算下一档时间，和 tick() 同一套档位 */
-  const pulse = el => { if (!calm() && el.animate) el.animate([{ opacity: .2 }, { opacity: 1 }], { duration: 260, easing: 'ease-out' }); };
-  function tick() {
-    const prev = STEPS[step]; step = (step + 1) % STEPS.length; const s = STEPS[step];
-    vTime.textContent = s.t; pulse(vTime);
-    if (s.w !== prev.w) { vWeather.textContent = s.w; pulse(vWeather); }
-    if (s.cur !== prev.cur) {
-      for (let i = 0; i < items.length; i++) {
-        const li = items[i], want = i < s.cur ? 'done' : i === s.cur ? 'cur' : '';
-        if (li.className !== want) { li.className = want; if (want === 'cur') pulse(li); }
-      }
-    }
+  /* ---------- 推进时间：按当前显示时间现算下一档（只往后；跨 00:00 取模、不改日期） ---------- */
+  const vTime = $('vTime'), vWeather = $('vWeather');
+  const toM = t => { const p = String(t || '').split(':'); return (+p[0] || 0) * 60 + (+p[1] || 0); };
+  const fmtM = n => { n = ((n % 1440) + 1440) % 1440; const h = Math.floor(n / 60), m = n % 60; return (h < 10 ? '0' : '') + h + ':' + (m < 10 ? '0' : '') + m; };
+  const curMin = () => window.Q2_NOW ? Q2_NOW().min : toM(vTime && vTime.textContent);
+  function nextMin(cur) {
+    const T = (window.Q2_DATA && Q2_DATA.schedule && Q2_DATA.schedule.today) || [];
+    const n = T.find(x => toM(x.t) > cur);
+    return n ? toM(n.t) : 0;
   }
+  window.Q2_TICKNEXT = () => fmtM(nextMin(curMin()));
+  const pulse = el => { if (!calm() && el.animate) el.animate([{ opacity: .2 }, { opacity: 1 }], { duration: 260, easing: 'ease-out' }); };
+  function commitAdvance(to, skipMid) {
+    const cur = curMin();
+    const dl = (to - cur + 1440) % 1440;
+    if (skipMid && dl && window.Q2_DATA && Q2_DATA.schedule) {
+      Q2_DATA.schedule.today.forEach(x => {
+        const xm = toM(x.t);
+        const between = cur < to ? (xm > cur && xm < to) : (xm > cur || xm < to);
+        if (between) x.missed = true;
+      });
+    }
+    if (dl > 0 && window.Q2_TIMEADD) window.Q2_TIMEADD(dl);
+    if (to === 0 && vWeather) {
+      const w = '雨停 · 有点凉';
+      if (vWeather.textContent !== w) { vWeather.textContent = w; pulse(vWeather); }
+    }
+    if (window.Q2_NOWSYNC) window.Q2_NOWSYNC();
+    else if (vTime && vTime.textContent !== fmtM(to)) { vTime.textContent = fmtM(to); pulse(vTime); }
+    return fmtM(to);
+  }
+  function tick() { return commitAdvance(nextMin(curMin()), false); }
+  function tickTo(hm, skipMid) { return commitAdvance(toM(hm), !!skipMid); }
 
   /* ---------- 附件：异步缩略到 72px（显示 36px@2x），原图永不进 DOM ---------- */
   const atts = $('atts'), fileIn = $('file'), files = new Map(), urls = new Map(); let attId = 0;
@@ -3123,7 +3053,7 @@ window.Q2_DATA = {
   const REPLIES = [
     [['speech', '「嗯？……你还真帮我拿过来了。」'], ['narr', '她终于抬起头，接过线头时指尖碰了一下你的手背，又若无其事地低下头去。楼下传来王阿姨的声音，说小肖把布料送到了。']   /* T13 mock：NPC 名字（王阿姨 / 小肖）用于看「生成完才高亮」 */, ['inner', '苏念念 · 心声：……刚才那一下，他应该没注意到吧。'], ['chg', { trust: 2 }]],
     [['speech', '「再等我十分钟，这一圈缝完我们就去煮面。」'], ['narr', '雨声小了一点，针线穿过布料的声音反而清楚起来。']],
-    [['speech', '「明天的插画展，我想早点到。你别又睡过头哦。」'], ['narr', '她把裙子举到灯下看了看，满意地点了点头。'], ['chg', { fav: 3, reason: '情动 · 被认真对待的期待', stage: ['亲密', '羁绊'] }]]
+    [['speech', '「明天的插画展，我想早点到。你别又睡过头哦。」'], ['narr', '她把裙子举到灯下看了看，满意地点了点头。'], ['chg', { fav: 3, reason: '被认真对待的期待', stage: ['亲密', '羁绊'] }]]
   ];
   let ri = 0, raf = 0, busy = null, minute = 27, demoStage = false, slowGen = false;
   const now = () => { const m = minute++; return '18:' + String(Math.min(m, 59)).padStart(2, '0'); };
@@ -3542,11 +3472,11 @@ window.Q2_DATA = {
   dlg.addEventListener('mouseleave', () => { hovering = false; clearTimeout(hoverT); if (!isCompact()) armIdle(); });
   if (params.get('card') !== 'open') dlg.classList.add('compact'); else armIdle();
   applyLay();
-  if (params.get('hist') === 'open') setHist(true); else if (params.get('hist') === 'full') setFull(true);
+  if (params.get('hist') === 'open' || params.get('hist') === 'full') setHist(true);
   setMat(mat); schedMat(300);
   if (!params.has('card') && !params.has('hist')) {   // 测试 / 演示用 URL 参数时不恢复
     const f = +load('q2-card-h') || 0, fe = +load('q2-card-h-exp') || 0, exv = load('q2-card-exp'), ex = exv === '1' || exv === '2';
-    if (exv === '2') requestAnimationFrame(() => setFull(true));
+    if (exv === '2') requestAnimationFrame(() => setHist(true));
     if (ex) { setHist(true, true); if (fe) { const f = fe; dlg.classList.add('sized'); dlg.style.setProperty('--ch', Math.round(Math.min(maxH(), f * innerHeight)) + 'px'); } }
     else if (f) requestAnimationFrame(() => applyH(f * innerHeight, false, true));
   }
@@ -3850,7 +3780,7 @@ window.Q2_DATA = {
     // T18：路由已落定 → 下一帧解除首帧锁定（恢复过渡、放开入场动画）
     const R = document.documentElement; R.setAttribute('data-route', pages[pg] ? pg : 'stage'); requestAnimationFrame(() => requestAnimationFrame(() => R.removeAttribute('data-route-pending'))); });
   addEventListener('hashchange', () => go(location.hash.slice(1).split('/')[0] || 'stage'));   // T38：#world/edit 之类的子页面记录归到所属页面
-  window.__q2 = { autoRail, railAuto: () => railAuto, relayout: () => { last = null; schedLay(); }, setFull, cycleHist, histLevel, demoGen: () => { if (busy) return; if (curPage !== 'stage') go('stage'); slowGen = true; wake(); reply(); }, setDyn: (v) => setDyn(v), toast, setDetail, setHist, tick, setExpr, setEdit, togglePop, closeMenus, setCollapsed, setMini, setLayout, setCompact, wake, lay: () => ({ set: laySet, eff: lay, last }) };
+  window.__q2 = { autoRail, railAuto: () => railAuto, relayout: () => { last = null; schedLay(); }, setFull, cycleHist, histLevel, demoGen: () => { if (busy) return; if (curPage !== 'stage') go('stage'); slowGen = true; wake(); reply(); }, setDyn: (v) => setDyn(v), toast, setDetail, setHist, tick, tickTo, setExpr, setEdit, togglePop, closeMenus, setCollapsed, setMini, setLayout, setCompact, wake, lay: () => ({ set: laySet, eff: lay, last }) };
 })();
 </script>
 <!-- 通用模态框（实色遮罩，无模糊） -->
@@ -4211,7 +4141,7 @@ window.Q2_DATA = {
     }
     h1 += '<button class="pop-link" data-x="mm">' + S.manageModels + ' ›</button>';
     // 输入区工具行原来的「?」快捷键提示挪到这里，作为弹层底部的「快捷键」分组（只读）
-    h1 += '<div class="mp-kb" role="group" aria-label="快捷键"><div class="pop-h">快捷键</div>' + [['H', '历史三档', '历史：收起 → 展开 → 全展开'], [']', '折叠右侧'], ['Enter', '发送'], ['Shift+Enter', '换行'], ['Ctrl+Shift+L', '省电模式']].map(k => '<div class="mp-kr"' + (k[2] ? ' title="' + k[2] + '"' : '') + '><kbd>' + k[0] + '</kbd><span>' + k[1] + '</span></div>').join('') + '<div class="mp-kr mute"><span>悬停回复显示操作</span></div></div>';
+    h1 += '<div class="mp-kb" role="group" aria-label="快捷键"><div class="pop-h">快捷键</div>' + [['H', '展开历史', '历史：收起 / 展开'], [']', '折叠右侧'], ['Enter', '发送'], ['Shift+Enter', '换行'], ['Ctrl+Shift+L', '省电模式']].map(k => '<div class="mp-kr"' + (k[2] ? ' title="' + k[2] + '"' : '') + '><kbd>' + k[0] + '</kbd><span>' + k[1] + '</span></div>').join('') + '<div class="mp-kr mute"><span>悬停回复显示操作</span></div></div>';
     modelPop.innerHTML = h1;
   }
   renderModelPop(); $('modelName').textContent = curModel.name; window.__q2app.renderModelPop = renderModelPop;
@@ -4339,12 +4269,23 @@ window.Q2_DATA = {
   function advanceSchedule() {
     const nx = D.schedule.today.filter(x => x.st !== 'done' && x.st !== 'cur');
     U.openModal('<h3>推进日程</h3><p>选择推进到哪一个日程。不跳过只是等到下一个日程开始；跳过的日程会被标记为没发生。</p><div class="opt-l">' +
-      nx.map((x, i) => '<label class="opt' + (i ? '' : ' on') + '"><input type="radio" name="adv" ' + (i ? '' : 'checked') + ' /><span>到达第 ' + (i + 1) + ' 个日程 · ' + x.t + ' ' + esc(x.act) + '<small>' + esc(x.place) + (i ? ' · 会跳过前面 ' + i + ' 项' : '') + '</small></span></label>').join('') + '</div>' +
+      nx.map((x, i) => '<label class="opt' + (i ? '' : ' on') + '"><input type="radio" name="adv" value="' + esc(x.id) + '" ' + (i ? '' : 'checked') + ' /><span>到达第 ' + (i + 1) + ' 个日程 · ' + x.t + ' ' + esc(x.act) + '<small>' + esc(x.place) + (i ? ' · 会跳过前面 ' + i + ' 项' : '') + '</small></span></label>').join('') + '</div>' +
       '<label class="ps-row"><span>跳过中间的日程<small class="desc" style="display:block">关闭 = 不跳过，只把时间推到下一项开始</small></span>' + sw(false) + '</label>' +
       '<div class="row"><button class="b-out" data-m="x">取消</button><button class="b-out" data-m="ok2">推进</button><button class="b-del" data-m="ok">推进并返回聊天</button></div>', m => {
         m.querySelectorAll('.opt input').forEach(r => r.addEventListener('change', () => m.querySelectorAll('.opt').forEach(o => o.classList.toggle('on', o.contains(r) && r.checked))));
-        m.querySelector('[data-m=ok]').addEventListener('click', () => { U.closeModal(); Q.tick(); P.go('stage'); toast('已推进到下一个日程'); });
-        m.querySelector('[data-m=ok2]').addEventListener('click', () => { U.closeModal(); Q.tick(); toast('已推进'); });
+        const go = back => {
+          const sel = m.querySelector('input[name=adv]:checked');
+          const skip = m.querySelector('.ps-row input[type=checkbox]');
+          const item = nx.find(x => String(x.id) === (sel && sel.value)) || nx[0];
+          U.closeModal();
+          const hm = item && item.t;
+          if (hm && Q.tickTo) Q.tickTo(hm, !!(skip && skip.checked));
+          else Q.tick();
+          if (back) P.go('stage');
+          toast(hm ? '已推进到 ' + hm : '已推进');
+        };
+        m.querySelector('[data-m=ok]').addEventListener('click', () => go(true));
+        m.querySelector('[data-m=ok2]').addEventListener('click', () => go(false));
       }, 'wide');
   }
   function newChat(fail) {
@@ -4530,7 +4471,6 @@ window.Q2_STICKERS = {"character":"苏念念","layout":"4x6","generatedAt":"2026
   const demo = (k, cur, opts) => '<div class="demo-bar">演示：' + opts.map(o => '<button data-demo-' + k + '="' + o[0] + '"' + (o[0] === cur ? ' class="on"' : '') + '>' + o[1] + '</button>').join('') + '</div>';
   const unknownNotice = (k) => '<div class="notice">' + ic('i-alert') + '<span class="grow"><b>' + S.lastGenUnknown + '</b><span class="desc">' + S.lastGenDesc + '</span></span><button class="b-out" data-x="' + k + '-cont">继续</button><button class="b-txt" data-x="' + k + '-drop">放弃</button></div>';
   const failBox = (msg, btn, k) => '<div class="c12 empty"><p>' + msg + '</p><button class="b-out" data-x="' + k + '">' + btn + '</button></div>';
-  const loadBox = msg => '<div class="c12 empty sk-wrap"><p>' + msg + '</p></div>';
 
   /* ---------------- 日程 ---------------- */
   const SC = D.schedule, stLabel = { done: '已结束', cur: '进行中', next: '待开始' };
@@ -5233,7 +5173,7 @@ window.Q2_STICKERS = {"character":"苏念念","layout":"4x6","generatedAt":"2026
   w.appendChild(pw);
   /* 桌宠（I6）示意：收起到桌宠后，在小窗角落画一个独立的桌宠框。平滑皮肤用 Q 版头像；像素皮肤换成像素小人（占位图，需真实素材） */
   const pet = document.createElement('div'); pet.className = 'lw-pet'; pet.hidden = true; pet.setAttribute('role', 'img'); pet.setAttribute('aria-label', '桌宠（示意）');
-  pet.innerHTML = '<span class="lw-pw-tag">桌宠 · 示意</span><span class="lw-pet-sm"></span><img class="q2-pet-px" src="assets/pet/pet-pixel-mock-idle.svg" alt="" width="48" height="60" /><small class="lw-pet-note">像素占位图 · 需真实素材</small>';
+  pet.innerHTML = '<span class="lw-pw-tag">桌宠 · 示意</span><span class="lw-pet-sm"></span><img class="q2-pet-px" src="assets/pet/pet-pixel-mock-idle.svg" alt="" width="48" height="60" onerror="this.hidden=true" /><small class="lw-pet-note">像素占位图 · 需真实素材</small>';
   w.appendChild(pet);
   function petPaint() { pet.hidden = !st.petOut; if (st.petOut) pet.querySelector('.lw-pet-sm').style.backgroundImage = getComputedStyle(av).backgroundImage; }
   const pwPaint = () => { const m = pw.querySelector('.lw-pw-m'); m.innerHTML = PET_CHAT.map(x => '<div class="lw-m sm' + (x.me ? ' me' : '') + '">' + esc(x.t) + '</div>').join(''); m.scrollTop = 1e9; };
@@ -5332,7 +5272,6 @@ window.Q2_STICKERS = {"character":"苏念念","layout":"4x6","generatedAt":"2026
   .lw-back:hover { background: var(--panel-2); } .lw-back .ic { width: 16px; height: 16px; flex: none; } .lw-back b { font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .lw-pb { flex: 1 1 auto; min-height: 0; overflow-y: auto; overflow-x: hidden; padding: 12px 16px 16px; overscroll-behavior: contain; }
   .lw-note { font-size: 12px; color: var(--text-3); margin: 0; }
-  .lw-pnote { margin-bottom: 8px; padding: 6px 8px; border-radius: 8px; background: var(--panel-2); }
   .lw-row { display: flex; align-items: center; gap: 8px; min-width: 0; } .lw-row .grow { flex: 1; }
   .lw-btn { flex: none; height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--line-2); background: var(--panel); color: var(--text); font: inherit; font-size: 13px; cursor: pointer; white-space: nowrap; }
   .lw-btn:hover { background: var(--panel-2); } .lw-btn.pri { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; } .lw-btn.danger { color: #fff; background: #c8463f; border-color: #c8463f; }
@@ -5358,7 +5297,6 @@ window.Q2_STICKERS = {"character":"苏念念","layout":"4x6","generatedAt":"2026
   .lw-pw-m { flex: 1; min-height: 0; overflow-y: auto; padding: 8px; display: flex; flex-direction: column; gap: 6px; }
   .lw-pw-in { flex: none; display: flex; gap: 6px; padding: 6px; border-top: 1px solid var(--line); }
   .lw-pw-in input { flex: 1; min-width: 0; height: 28px; padding: 0 8px; border-radius: 7px; border: 1px solid var(--line-2); background: var(--panel-2); color: var(--text); font: inherit; font-size: 12.5px; }
-  .lw-pmsgs { display: flex; flex-direction: column; gap: 6px; max-height: 160px; overflow-y: auto; padding: 8px; margin-bottom: 8px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); }
   /* 输入区 */
   .lw-in { position: relative; z-index: 3; flex: none; display: flex; align-items: flex-end; gap: 8px; padding: 8px 10px 10px; border-top: 1px solid var(--line); background: var(--panel); }
   .lw-in textarea { flex: 1; min-width: 0; box-sizing: border-box; resize: none; height: 38px; min-height: 38px; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line-2); background: var(--panel-2); color: var(--text); font: inherit; font-size: 13.5px; line-height: 20px; overflow-y: hidden; }
@@ -5417,7 +5355,7 @@ window.Q2_STICKERS = {"character":"苏念念","layout":"4x6","generatedAt":"2026
       '</div><div class="lt-row"><input id="tdIn" placeholder="添加一条待办" /><button class="b-out" data-x="tadd">添加</button></div>');
     const bond = blk('羁绊剧本', '<div class="desc">写一句想法，她会围绕它演一段即兴小剧场。</div><textarea id="bdIn" rows="2" placeholder="比如：雨夜停电，两个人点蜡烛打副本"></textarea><div class="lt-row"><button class="b-txt" data-x="bondrand">随便来一个</button><span class="grow"></span><button class="b-out" data-x="bond">开始</button></div>');
     const pet = blk('桌宠与陪伴窗', (L.hasPetPortrait
-        ? '<div class="lt-petrow"><button class="lt-pet-mini" data-x="pettap" title="点一下摸摸，按住揉揉；右键可关闭">' + av() + '<img class="q2-pet-px" src="assets/pet/pet-pixel-mock-idle.svg" alt="" width="48" height="60" /></button><div class="grow"><div class="desc">' + (st.petOut ? '桌宠已放出，精简窗收起中' : '桌宠在桌面右下角待命') + '</div><div class="lt-asr"><span class="dot"></span>语音识别进行中 · 右键可关闭</div></div></div>'
+        ? '<div class="lt-petrow"><button class="lt-pet-mini" data-x="pettap" title="点一下摸摸，按住揉揉；右键可关闭">' + av() + '<img class="q2-pet-px" src="assets/pet/pet-pixel-mock-idle.svg" alt="" width="48" height="60" onerror="this.hidden=true" /></button><div class="grow"><div class="desc">' + (st.petOut ? '桌宠已放出，精简窗收起中' : '桌宠在桌面右下角待命') + '</div><div class="lt-asr"><span class="dot"></span>语音识别进行中 · 右键可关闭</div></div></div>'
         : '<div class="lt-pet-miss">' + ic('i-alert') + '<span>还没有桌宠形象</span><button class="b-out" data-x="deploy">去部署立绘</button></div>') +
       '<div class="lt-row"><button class="b-out" data-x="topet">' + (st.petOut ? '放出精简窗' : '收起到桌宠') + '</button><button class="b-txt" data-x="petwin">' + (st.petShown ? '收起陪伴窗' : '打开陪伴窗') + '</button></div>' +
       (st.petShown ? '<div class="lt-pw"><div class="lt-pw-h"><b>陪伴窗 · 桌宠旁的她</b></div><div class="lt-m">刚才那局打完了吗？我帮你数着时间呢。</div><div class="lt-row"><input placeholder="回她一句…" /><button class="b-out" data-x="pettap">发送</button></div></div>' : ''),
@@ -5466,7 +5404,7 @@ window.Q2_RUNHOPS = [{"n": 1, "c": 22, "min": 2333, "max": 18564, "label": "第1
    本分片分四段：A 像素字体  B 常驻像素点缀（两种皮肤都有）  C 平滑皮肤的轻度造型（像素皮肤下全关）  D 像素皮肤
    ===================================================================================== */
 /* ---------- A 像素字体：Fusion Pixel 12px 比例宽（OFL，见 assets/fonts/OFL.txt），已按样稿里的标题 / 数字 / 按钮用字 + ASCII 子集化 ---------- */
-@font-face { font-family: "Q2 Pixel"; src: url("assets/fonts/fusion-pixel-12px-proportional-zh_hans.q2subset.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Q2 Pixel"; src: local("Fusion Pixel 12px Proportional zh_hans"), local("Fusion Pixel 12px Proportional SC"); font-display: swap; }   /* 子集 woff2 未随样稿拷来；有系统字体就用，否则回退 --px-font 后面的等宽栈，避免 404 */
 :root { --px-font: "Q2 Pixel", ui-monospace, "Cascadia Mono", Consolas, monospace; }
 
 /* ---------- B 常驻像素点缀（T21-a）---------- */
@@ -6156,25 +6094,10 @@ html.q2-pixel .ln[data-page="memory"].q2-new .lbl::after, html.q2-pixel .app.lmi
 .ow-r:hover, .ow-r.open { background: color-mix(in srgb, var(--text) 5%, transparent); }
 .ow-r:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 .ow-r > i { font-style: normal; font-size: 12px; line-height: 20px; color: var(--text-3); white-space: nowrap; }
-.ow-s { display: flex; align-items: center; gap: 6px; min-width: 0; line-height: 20px; font-size: 13px; }
-.ow-s .ow-n { display: block; flex: 0 1 auto; font-size: 13px; color: var(--text); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ow-s .ow-n.hid { color: var(--text-3); }
-.ow-s .ow-p { flex: none; height: 16px; padding: 0 6px; border-radius: 8px; font-size: 10.5px; line-height: 16px; color: var(--text-3); background: color-mix(in srgb, var(--text) 9%, transparent); font-variant-numeric: tabular-nums; }
-.ow-s .ow-none { display: inline-flex; align-items: center; gap: 5px; color: var(--text-3); }
-.ow-s .ow-none::before { content: ""; width: 7px; height: 7px; border-radius: 50%; border: 1.5px solid currentColor; box-sizing: border-box; flex: none; }
-.ow-c { grid-column: 2; display: none; font-size: 12px; line-height: 1.55; overflow-wrap: anywhere; padding-bottom: 1px; }
-.ow-r.open .ow-c, .ow-r:hover .ow-c { display: block; }
-.ow-r.open .ow-s, .ow-r:hover .ow-s { display: none; }
-.ow-c > span { display: inline; white-space: normal; overflow: visible; font-size: inherit; color: var(--text-3); }   /* 盖掉 .kv span 的整行省略 */
-.ow-c > span:nth-of-type(1) { color: var(--text); }
-.ow-c > span:nth-of-type(2) { color: color-mix(in srgb, var(--text) 72%, var(--text-3)); }
-.ow-c > span:nth-of-type(3) { color: color-mix(in srgb, var(--text) 40%, var(--text-3)); }
-.ow-c > span.off { text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--text-3) 60%, transparent); }
-.ow-c > b { display: inline; font-size: inherit; font-weight: 400; color: var(--text-3); margin: 0 4px; }
+/* 盖掉 .kv span 的整行省略 */
 .ow-r.oc-flash { background: var(--accent-bg); box-shadow: inset 2px 0 0 var(--accent); transition: none; }
 html.lowfx .ow-r { transition: none; }
 html.q2-pixel .ow-r { border-radius: 0; }
-html.q2-pixel .ow-s .ow-p { border-radius: 0; }
 html.q2-pixel .kv .kv-h .walk-sm { border-radius: 0; border-width: 2px; border-color: var(--px-line); }
 </style>
 <script>
@@ -6199,13 +6122,6 @@ html.q2-pixel .kv .kv-h .walk-sm { border-radius: 0; border-width: 2px; border-c
   };
   let wear = SETS[params.get('outfit') === 'dress' ? 'dress' : 'base']();
   if (window.Q2_STRESS && Q2_STRESS.mode === 'empty') wear = { 外套: null, 上衣: null, 内衣: null, 下衣: null, 内裤: null, 鞋子: null, 袜子: null, 配饰: null };
-  const label = x => x.name;   // T44：不再按 NSFW 隐藏
-  const named = x => label(x) + (x.state === '半脱' ? '（半脱）' : x.state === '脱下' ? '（脱下）' : '');
-  function partOf(slots) {   // 同一行里多槽位衣物只算一次
-    const seen = new Set(), list = [];
-    for (const s of slots) { const x = wear[s]; if (!x || seen.has(x.id)) continue; seen.add(x.id); list.push(x); }
-    return list;
-  }
   /* T44 穿搭卡：每行显示最外层，点开列出里层（交互 / 审美 18:19 规则）。不显示穿着状态 */
   const TAG = { 外套: '外套', 上衣: '上衣', 内衣: '内衣', 下衣: '下衣', 内裤: '内裤', 鞋子: '鞋', 袜子: '袜子' };
   const sx = x => x.sample ? '<em class="ow-x">示例 · 未导出</em>' : '';
@@ -6671,7 +6587,7 @@ html.q2-flow #dialogue .hist-bar b::after { content: "聊天流"; margin-left: 8
 
   const st0 = { view: 'models', q: '', navY: 0, adv: new Set(), loadFail: null, saveFail: false,
     // A1
-    pv: CUR.provider_id || 'deepseek', model: CUR.model_id, mq: '', mTyping: false, m401: false, re401: false, fetchSt: null, stale: false, needKey: false, kJust: false, vModel: '', vq: '', vTyping: false, vJust: false, vUrl: '', s1Url: null, s1Model: '', s1Test: null, s1Fails: 3, test: 'ok', testAt: '10-02 00:01', keys: { deepseek: '3f2a', custom: '9c1e' }, url: { custom: 'https://api.example-relay.com/v1', local: 'http://127.0.0.1:11434/v1' }, fetched: false,
+    pv: CUR.provider_id || 'deepseek', model: CUR.model_id, mq: '', mTyping: false, m401: false, re401: false, fetchSt: null, stale: false, needKey: false, kJust: false, vModel: '', vq: '', vTyping: false, vJust: false, vUrl: '', s1Url: null, s1Model: '', s1Test: (new URLSearchParams(location.search).get('s1') === 'ok' ? 'ok' : null), s1Fails: 3, test: 'ok', testAt: '10-02 00:01', keys: { deepseek: '3f2a', custom: '9c1e' }, url: { custom: 'https://api.example-relay.com/v1', local: 'http://127.0.0.1:11434/v1' }, fetched: false,
     vision: false, sys1: false, shadow: true, vtab: 'tts', hosted: 'off', asrHost: 'off', hk: { pause: 'Ctrl+Alt+P', shot: 'F3', talk: 'Ctrl+Alt+V' }, hkRec: null, hkWarn: null, back: null, debug: false, obsTab: 'req', obsF: 'all', obsG: new Set(), obsSel: null,
     // A4–A6
     voice: true, voiceSvc: 'system', asr: false, imgOn: true, imgN: '2', imgReview: true, imgProto: 'openai',
@@ -6789,7 +6705,6 @@ html.q2-flow #dialogue .hist-bar b::after { content: "聊天流"; margin-left: 8
   // 实时对话：开关始终可点，只写状态行（watch-realtime-voice-field:28）
   const rtLine = st => !st.listen || !st.watching ? '<span class="dep-why">' + ic('i-alert') + '<span>要先打开「一直听着」，并且陪玩观察进行中才有用</span></span>'
     : st.asrModel === 'dl' ? '<span class="dep-why">' + ic('i-clock') + '<span>第一次使用，正在准备语音识别… 42%</span></span>' : '说话就能直接接上，不用按键';
-  const needBar = (st, what, txt) => '<div class="imp-warn soft st-need">' + ic('i-alert') + '<div class="grow"><b>' + txt + '</b><div class="desc">配好之后这里的开关就能用了</div></div><button class="b-out" data-x="need" data-v="' + what + '">去设置 ›</button></div>';
   const VIEWS = {
     /* A1–A3 聊天模型（代码3 model1，settings-model-layout.md 20:00 / Pip 19:59）：来源 → 服务商（仅常用服务）→ 服务地址 → 模型（可输入下拉，末项「使用「xxx」」）→ API Key →「查看用量 ›」→ 试试能不能连上 / 保存（测试通过才能保存） */
     models: st => {
@@ -7086,7 +7001,7 @@ html.q2-flow #dialogue .hist-bar b::after { content: "聊天流"; margin-left: 8
     },
     on: (t, st) => { const x = t.dataset.x, v = t.dataset.v, k = t.dataset.k; if (!x) return;
       if (x === 'view') { st.view = v; st.back = null; repaint('settings'); A.PG.settings.el.scrollTop = 0; return; }
-      if (x === 'mjump' || x === 'need') { if (x === 'need') st.back = v; if (v === 'vision' || x === 'need') { st.view = 'models'; st.adv.add('vision'); } else st.view = v; repaint('settings'); if (st.view === 'models' && st.adv.has('vision') && (v === 'vision' || x === 'need')) setTimeout(() => { const h = A.PG.settings.el.querySelector('[data-anc=vision]'); h && h.scrollIntoView({ block: 'start', behavior: 'smooth' }); }, 0); return; }
+      if (x === 'mjump') { if (v === 'vision') { st.view = 'models'; st.adv.add('vision'); } else st.view = v; repaint('settings'); if (st.view === 'models' && st.adv.has('vision') && v === 'vision') setTimeout(() => { const h = A.PG.settings.el.querySelector('[data-anc=vision]'); h && h.scrollIntoView({ block: 'start', behavior: 'smooth' }); }, 0); return; }
       if (x === 'back') { st.view = st.back; st.back = null; repaint('settings'); return; }
       if (x === 'vtab') { st.vtab = v; repaint('settings'); return; }
       if (x === 'asrhost') { if (st.asrHost === 'on') { st.asrHost = 'off'; repaint('settings'); toast('已停止识别服务（示例）'); } else { st.asrHost = 'run'; repaint('settings'); setTimeout(() => { st.asrHost = 'on'; repaint('settings'); toast('识别服务已启动（示例）'); }, 900); } return; }
@@ -8208,7 +8123,6 @@ html.q2-pixel .stk-exm { border-radius: 0; }
 .wo-kv { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 4px 10px; margin: 0; font-size: 13px; }
 .wo-kv dt { color: var(--text-3); } .wo-kv dd { margin: 0; color: var(--text); }
 .wo-nar { margin: 8px 0 0; padding: 8px 10px; border-radius: 8px; background: color-mix(in srgb, var(--text) 5%, var(--panel)); font-size: 13px; line-height: 1.7; color: var(--text-2); }
-.st-log-h { display: flex; align-items: center; gap: 8px; }
 html.q2-pixel .wo-pill, html.q2-pixel .wo-res::before, html.q2-pixel .wo-tl, html.q2-pixel .wo-nar { border-radius: 0; }
 @container (max-width: 560px) { .wo-r { grid-template-columns: 46px 44px 70px minmax(0, 1fr); gap: 6px; padding: 7px 8px; } }
 </style>
@@ -8912,10 +8826,7 @@ html.q2-pixel .ow-in2 { border-radius: 0; }
 .t44-nr .mood em, .t44-badges .mood em { font-style: normal; font-size: 10px; font-weight: 400; color: #b8aea8; margin-left: 3px; }
 html.q2-pixel .t44-nr .mood { border-radius: 0; }
 #t49htw { display: inline-flex; align-items: center; gap: 4px; margin-right: 2px; font-size: 12px; line-height: 16px; color: #8a7f7a; white-space: nowrap; flex: none; opacity: 0; width: 0; overflow: hidden; transition: opacity .15s; }
-#t49htw.on { opacity: 1; width: auto; }
 #t49htw .ic { width: 12px; height: 12px; flex: none; margin-left: 2px; }
-#t49htw.nw .we, #t49htw.ni .ic, #t49htw.nt .tm { display: none; }
-#t49htw.nt { display: none; }
 #t44tw { display: flex; align-items: center; gap: 4px; margin-top: 3px; font-size: 12px; line-height: 16px; color: #8a7f7a; white-space: nowrap; min-width: 0; }
 #t44tw .ic { width: 12px; height: 12px; flex: none; margin-left: 6px; }
 #t44tw .we { overflow: hidden; text-overflow: ellipsis; }
@@ -8938,24 +8849,19 @@ html.q2-pixel .t44-badges span { border-radius: 0; }
     var chip = $('saveChipT'), vT = $('vTime'), vW = $('vWeather'), base = null, busy = false;
     function syncChip() {
       if (!chip || busy) return; busy = true;
+      try {
       var cur = chip.textContent, m = cur.match(/^槽位 \d+ · 第 [^ ]+ 天/); if (m) base = m[0];
-      var tm = vT ? (window.Q2_NOW ? Q2_NOW().wk : wk) + ' ' + vT.textContent.trim()   /* T69：星期跟系统走 */ : (vT ? vT.textContent.trim() : ''), we = vW ? vW.textContent.trim() : '';
+      var tm = vT ? (window.Q2_NOW ? Q2_NOW().wk : wk) + ' ' + vT.textContent.trim()   /* T69：星期跟系统走 */ : '', we = vW ? vW.textContent.trim() : '';
       var app = document.querySelector('.app'), folded = app && app.classList.contains('collapsed');   /* 右栏收起时胶囊带上时间天气（审美 19:33） */
-      /* 审美 19:55：胶囊固定「槽位 · 第 N 天」；右栏收起时时间天气进历史标题栏，标题栏看不见时才退回胶囊 */
-      var hb = document.querySelector('#dialogue .hist-bar'), hbOn = !!(hb && hb.getClientRects().length && hb.offsetHeight > 0);
+      var hb = document.querySelector('#dialogue .hist-bar');
       var ht = document.getElementById('t49htw');
       if (!ht && hb) { ht = document.createElement('span'); ht.id = 't49htw'; ht.innerHTML = '<span class="tm"></span><svg class="ic" aria-hidden="true"><use href="#i-cloud"/></svg><span class="we"></span>'; var hbtn = hb.querySelector('[data-act=hist]'); hb.insertBefore(ht, hbtn || null); }
-      if (ht) { var ha = ht.querySelector('.tm'), hw = ht.querySelector('.we'); if (ha.textContent !== tm) ha.textContent = tm; if (hw.textContent !== we) hw.textContent = we; ht.classList.toggle('on', false);   /* T76 D4：时间天气只放顶栏胶囊，历史标题栏不再显示 */ fitHt(); }
+      if (ht) { var ha = ht.querySelector('.tm'), hw = ht.querySelector('.we'); if (ha.textContent !== tm) ha.textContent = tm; if (hw.textContent !== we) hw.textContent = we; ht.classList.toggle('on', false);   /* T76b Jay 16:22 方案二：历史标题栏永不显示时间天气，元素只留作 4px 间距占位 */ }
       var t = folded ? [base || cur, tm, we].filter(Boolean).join(' · ') : (base || cur);   /* T76b Jay 16:22 方案二：右栏收起时胶囊带时间天气，右栏开着只留「槽位 · 第 N 天」（时间天气在右栏头卡） */
       var tw = document.getElementById('t44tw');
       if (tw) { var a = tw.querySelector('.tm'), b = tw.querySelector('.we'); if (a.textContent !== tm) a.textContent = tm; if (b.textContent !== we) b.textContent = we; }
-      if (chip.textContent !== t) chip.textContent = t; busy = false;
-    }
-    function fitHt() {
-      var ht = document.getElementById('t49htw'), hb = ht && ht.parentNode; if (!ht || !ht.classList.contains('on')) return;
-      ht.classList.remove('nw', 'ni', 'nt');
-      var gp = document.querySelector('#dialogue .c-grip'), fv = hb.querySelector('.h-tools [data-ht=f]'); function fits() { if (hb.scrollWidth > hb.clientWidth + 1) return false; if (!gp || !fv || !gp.offsetParent || !fv.offsetParent) return true; var a = gp.getBoundingClientRect(), b = fv.getBoundingClientRect(); return b.left >= a.right + 8 || b.right <= a.left - 8; } /* T49 标题栏 20:25：收藏星离把手可拖区至少 8px，不够先缩时间天气 */
-      ['nw', 'ni', 'nt'].some(function (c) { if (fits()) return true; ht.classList.add(c); return false; });
+      if (chip.textContent !== t) chip.textContent = t;
+      } finally { busy = false; }
     }
     var dlgEl = document.getElementById('dialogue');
     if (dlgEl) { new MutationObserver(function () { requestAnimationFrame(syncChip); setTimeout(syncChip, 260); }).observe(dlgEl, { attributes: true, attributeFilter: ['class'] }); new ResizeObserver(function () { if (!window.__q2drag) syncChip(); }).observe(dlgEl); }
@@ -9002,8 +8908,7 @@ html.q2-pixel .t44-badges span { border-radius: 0; }
     var order = [rel, locCard, schedCard, clothCard].filter(Boolean), anchor = side.querySelector('.side-head');
     order.forEach(function (n) { anchor.after(n); anchor = n; });
     /* 详细状态整块取消（含底部按钮） */
-    var det = $('detail'), foot = side.querySelector('.side-foot');
-    var det = $('detail');
+    var foot = side.querySelector('.side-foot');
     if (foot) { foot.hidden = true; foot.classList.add('t44-off'); }
     if (window.__q2 && __q2.relayout) __q2.relayout();
   }
@@ -9122,7 +9027,7 @@ html.q2-pixel .t44-badges span { border-radius: 0; }
   var S = window.Q2_TUNE = window.Q2_TUNE || { sys1: false };
   function setSt() { var A = window.__q2app; return A && A.PG && A.PG.settings ? A.PG.settings.st : null; }
   function s1Model() { var st = setSt(); if (st && (st.s1Model || '').trim()) return true; return q === 'model' || q === 'ok'; }   /* 代码3 model2：读设置页快判卡的模型字段 */
-  function s1Conn() { var st = setSt(); return !!(st && st.s1Test === 'ok'); } /* 样稿没有真的 8204 服务：默认按未连接 */
+  function s1Conn() { var st = setSt(); return q === 'ok' || !!(st && st.s1Test === 'ok'); } /* ?s1=ok = 加载即就绪；否则点「试试能不能连上」 */
   var TUNE_EXT = [
     { id: 'sys1', name: '快判（System One）', desc: '在后台悄悄记下她的第一反应，不影响回复，也不存聊天内容',
       check: function () { if (!s1Model()) return { why: '还没选快判模型', view: 'sys1', focus: 'f-s1-model' }; if (!s1Conn()) return { why: '快判服务未连接', view: 'sys1', focus: 'f-s1-url' }; return null; } }
@@ -9174,7 +9079,7 @@ html.q2-pixel .t44-badges span { border-radius: 0; }
     el.innerHTML = '<span class="t48-tag">待发送</span><div class="t48-tx"></div><div class="t48-ops"><button data-t48="edit">修改</button><button data-t48="drop">撤回</button><button class="pri" data-t48="send">发送</button></div>';
     el.querySelector('.t48-tx').textContent = d.text; d.el = el; sync(); return el;
   }
-  function sync() { if (!cur) return; place(cur.el); var b = cur.el.querySelector('[data-t48=send]'), busy = C() && C().busy(); b.disabled = !!busy; b.title = busy ? '等她说完再发' : ''; }
+  function sync() { if (!cur) return; place(cur.el); var b = cur.el.querySelector('[data-t48=send]'), busy = !!(C() && C().busy()), t = busy ? '等她说完再发' : ''; if (b.disabled !== busy) b.disabled = busy; if (b.title !== t) b.title = t; }
   var lastF = null; document.addEventListener('focusin', function (e) { lastF = cur && cur.el.contains(e.target) ? e.target : null; }, true);
   function place(el) { var fa = document.activeElement, keep = fa && el.contains(fa) ? fa : (fa === document.body && lastF && el.contains(lastF) ? lastF : null); place0(el); if (keep && document.activeElement !== keep) keep.focus({ preventScroll: true }); }   // 22:47：换位置时焦点不丢
   function place0(el) { var bx = C().box(), di = document.querySelector('.dialogue .d-input'), stg = bx && bx.id !== 'hist' && di; el.classList.toggle('stg', !!stg); if (stg) { if (el.nextElementSibling !== di) di.parentNode.insertBefore(el, di); } else if (el.parentNode !== bx || el !== bx.lastElementChild) bx.appendChild(el); }   // 22:40：舞台模式贴输入框正上方，列表（历史）模式放对话末尾
@@ -9241,6 +9146,7 @@ html.q2-pixel .t82-tip{border-radius:0;font-family:var(--px-font);box-shadow:3px
   }
   function arm() { tick(); setTimeout(arm, 60000 - Date.now() % 60000 + 50); }
   setTimeout(arm, 60000 - Date.now() % 60000 + 50); tick();
+  window.Q2_NOWSYNC = tick;   /* T45b：推进后立刻按新的「现在」刷新一次 */
 })();
 </script>
 <style>/* T71 心情标签（审美 09:42 / Pip 10:16） */
@@ -9894,8 +9800,9 @@ html.lowfx .mn button.t45-busy::after { transition: none; }
     setTimeout(function () {   /* 示意：推进完成前按钮保持禁用；?st=tick-fail 演示失败（时间不变） */
       var done = false;
       if (P.get('st') !== 'tick-fail') { try { Q.tick(); done = true; } catch (e) { done = false; } }
-      run = false; restore(false); mn.classList.remove('open');
-      Q.toast(done ? '已推进到 ' + (vT ? vT.textContent : '') : '推进失败 · 重试');
+      run = false; restore(false);
+      if (done) { mn.classList.remove('open'); Q.toast('已推进到 ' + (vT ? vT.textContent : '')); }
+      else { Q.toast('推进失败，请再试一次'); enter(); }
     }, 350);
   }
   window.addEventListener('click', function (e) {
